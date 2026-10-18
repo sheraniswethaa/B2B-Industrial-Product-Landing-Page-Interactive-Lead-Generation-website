@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EcoPack Solutions – Smart Industrial Casing Series</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#0F172A;--bg2:#1E293B;--card:rgba(51,65,85,.45);--line:rgba(148,163,184,.22);--tx:#F1F5F9;--mut:#94A3B8;--em:#10B981;--cy:#06B6D4;--am:#F59E0B;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{background:radial-gradient(1100px 600px at 85% -10%,rgba(6,182,212,.2),transparent),radial-gradient(900px 500px at -10% 25%,rgba(16,185,129,.16),transparent),var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(15,23,42,.92);backdrop-filter:blur(12px);z-index:10}
+[hidden]{display:none!important}
+.wrap{max-width:1180px;margin:auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:rgba(15,23,42,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-weight:800;letter-spacing:.2px}.logo b{color:var(--em)}
+nav{display:flex;gap:16px;font-size:.86rem}nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--tx)}
+@media(max-width:640px){nav a:nth-child(n+3){display:none}}
+section{padding:56px 0}
+.eyebrow{color:var(--cy);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+h1{font-size:clamp(2rem,6.5vw,3.6rem);line-height:1.08;font-weight:800;margin:8px 0 12px}
+h1 span,h2 span{background:linear-gradient(90deg,var(--em),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.5rem,4.5vw,2.3rem);line-height:1.15;font-weight:800;margin-bottom:10px}
+.sub{color:var(--mut);max-width:720px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 26px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.84rem}.chip b{color:var(--em)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(14px);padding:20px}
+.viz{display:grid;gap:18px}
+@media(min-width:960px){.viz{grid-template-columns:1.55fr 1fr}}
+.variants{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.vb,.tab,.hsb{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;cursor:pointer;transition:.2s}
+.vb.on,.tab.on,.hsb.on{border-color:var(--em);box-shadow:0 0 0 1px var(--em),0 0 22px rgba(16,185,129,.3)}
+.stage{position:relative;height:min(62vh,540px);min-height:340px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,#1e293b,#0b1220)}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.hint{position:absolute;left:12px;top:10px;font-size:.74rem;color:var(--mut);pointer-events:none}
+.ctrl{margin-top:14px;display:grid;gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.hsb{padding:8px 12px;font-size:.85rem}.hsb i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--am);margin-right:8px;box-shadow:0 0 8px var(--am)}
+input[type=range]{width:100%;accent-color:var(--em)}
+label{font-size:.85rem;color:var(--mut);display:flex;justify-content:space-between;margin-bottom:6px}label b{color:var(--tx)}
+.cap{min-height:3.2em;font-size:.9rem;color:var(--tx);border-left:3px solid var(--am);padding-left:12px}
+.info h3{font-size:1.35rem}.tag{color:var(--cy);font-size:.85rem;margin-bottom:10px}
+.info h4{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:14px 0 6px}
+.info ul{padding-left:18px;color:#cbd5e1}.info li{margin:4px 0}.info li::marker{color:var(--em)}
+.roi{display:grid;gap:18px}@media(min-width:900px){.roi{grid-template-columns:1fr 1fr}}
+.out{text-align:center;display:flex;flex-direction:column;justify-content:center}
+.big{font-size:clamp(2.6rem,11vw,4.8rem);font-weight:800;color:var(--em);font-variant-numeric:tabular-nums;text-shadow:0 0 28px rgba(16,185,129,.75);animation:glow 2.6s ease-in-out infinite}
+@keyframes glow{50%{text-shadow:0 0 46px rgba(6,182,212,.95)}}
+.split{display:flex;gap:12px;margin-top:16px}.split div{flex:1;background:rgba(15,23,42,.55);border:1px solid var(--line);border-radius:12px;padding:10px}.split small{color:var(--mut);display:block;font-size:.74rem}.split b{color:var(--cy)}
+.fine{color:var(--mut);font-size:.76rem;margin-top:12px}
+.fld{margin-bottom:16px}
+.tabs{display:flex;gap:8px;margin:16px 0}
+.matrix{display:grid;grid-template-columns:1.1fr 1fr 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);font-size:.92rem}
+.matrix[data-v=legacy],.matrix[data-v=eco]{grid-template-columns:1fr 1.5fr}
+.matrix[data-v=legacy] .e,.matrix[data-v=eco] .l{display:none}
+.matrix>div{padding:14px 12px;border-bottom:1px solid var(--line)}
+.matrix .hd{background:rgba(15,23,42,.7);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.matrix .m{color:var(--mut)}.matrix .l{color:#fca5a5}.matrix .e{color:var(--em);font-weight:600;background:rgba(16,185,129,.07)}
+form{display:grid;gap:14px}
+.two{display:grid;gap:14px}@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
+input,select{width:100%;font:inherit;color:var(--tx);background:rgba(15,23,42,.7);border:1px solid var(--line);border-radius:10px;padding:12px;outline:0}
+input:focus,select:focus{border-color:var(--cy);box-shadow:0 0 0 3px rgba(6,182,212,.25)}
+.err{color:var(--am);font-size:.8rem;min-height:1em;margin-top:4px}
+.btn{font:inherit;font-weight:700;color:#04210f;background:linear-gradient(90deg,var(--em),var(--cy));border:0;border-radius:12px;padding:14px 22px;cursor:pointer;box-shadow:0 0 26px rgba(16,185,129,.4)}
+.btn:hover{filter:brightness(1.1)}
+.ok{text-align:center;border-color:var(--em);box-shadow:0 0 40px rgba(16,185,129,.25)}
+.tid{font-size:clamp(1.8rem,7vw,2.8rem);font-weight:800;color:var(--em);font-family:ui-monospace,Menlo,monospace;margin:8px 0}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--mut);font-size:.82rem;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">Eco<b>Pack</b> Solutions</div><nav><a href="#visualizer">3D Visualizer</a><a href="#roi">ROI</a><a href="#compare">Compare</a><a href="#sample">Sample Kit</a></nav></div></header>
+
+<main class="wrap">
+<section id="visualizer">
+ <div class="eyebrow">EcoPack Industrial Casing Pvt Ltd</div>
+ <h1>EcoPack <span>Smart</span> Industrial Casing Series</h1>
+ <p class="sub">Interactive 3D Specimen Inspection &amp; Multi-Variant Product Visualizer</p>
+ <div class="chips"><span class="chip"><b>35%</b> less transit damage</span><span class="chip"><b>18%</b> lower freight tare weight</span><span class="chip"><b>500+</b> reuse cycles</span></div>
+ <div class="variants" id="variants">
+  <button class="vb on" data-k="eco">Series 5 Eco-Crate</button>
+  <button class="vb" data-k="thermo">Thermo-Shield Casing</button>
+  <button class="vb" data-k="flexi">Flexi-Fold Bulk Box</button>
+ </div>
+ <div class="viz">
+  <div>
+   <div class="stage" id="stage"><canvas id="cv"></canvas><div class="hint">Drag to orbit · pinch/scroll to zoom · two-finger drag to pan</div></div>
+   <div class="ctrl">
+    <div><label for="ex">Explode layers <b id="exv">0%</b></label><input type="range" id="ex" min="0" max="100" value="0" aria-label="Explode layers"></div>
+    <div class="row" id="hs"><button class="hsb" data-i="0"><i></i>Shock Absorbers</button><button class="hsb" data-i="1"><i></i>IoT Telemetry Sensor</button><button class="hsb" data-i="2"><i></i>Eco-Composite Shell</button></div>
+    <div class="cap" id="cap">Tap a hotspot (or a glowing marker on the model) to focus the camera.</div>
+   </div>
+  </div>
+  <aside class="card info" id="info"></aside>
+ </div>
+</section>
+
+<section id="roi">
+ <div class="eyebrow">ROI Calculator</div>
+ <h2>Estimate Your <span>Enterprise Annual Savings</span></h2>
+ <div class="roi">
+  <div class="card">
+   <div class="fld"><label for="vol">Monthly Pallet Volume <b id="vv"></b></label><input type="range" id="vol" min="100" max="10000" step="50" value="1000"></div>
+   <div class="fld"><label for="val">Average Value per Pallet <b id="av"></b></label><input type="range" id="val" min="500" max="10000" step="100" value="2500"></div>
+   <p class="fine">Damage savings = annual pallets × (value × 3.5%). Freight savings = annual pallets × $14.50. Illustrative estimate based on EcoPack model assumptions.</p>
+  </div>
+  <div class="card out">
+   <div class="eyebrow">Total estimated annual savings</div>
+   <div class="big" id="tot">$0</div>
+   <div class="split"><div><small>Damage savings</small><b id="dmg"></b></div><div><small>Freight savings</small><b id="frt"></b></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="compare">
+ <div class="eyebrow">Specifications Matrix</div>
+ <h2>Legacy Packaging vs. <span>EcoPack Smart</span></h2>
+ <div class="tabs" id="tabs"><button class="tab on" data-v="both">Side by side</button><button class="tab" data-v="legacy">Legacy</button><button class="tab" data-v="eco">EcoPack</button></div>
+ <div class="matrix" id="mx" data-v="both">
+  <div class="hd">Metric</div><div class="hd l">Legacy Single-Use</div><div class="hd e">EcoPack Smart</div>
+  <div class="m">Damage Rate</div><div class="l">4.2%</div><div class="e">&lt;0.5%</div>
+  <div class="m">Reusability</div><div class="l">Single-use / 5 trips</div><div class="e">500+ cycles</div>
+  <div class="m">Real-Time Tracking</div><div class="l">None</div><div class="e">GPS / Shock / Temp sensors</div>
+  <div class="m">Environmental Standard</div><div class="l">High landfill impact</div><div class="e">100% ISO 14001 recyclable</div>
+ </div>
+</section>
+
+<section id="sample">
+ <div class="eyebrow">Request Sample Kit</div>
+ <h2>Order Your <span>Complimentary Enterprise Trial Kit</span></h2>
+ <div class="card" style="max-width:720px">
+  <form id="f" novalidate>
+   <div class="two"><div><input name="n" placeholder="Full name" autocomplete="name" required><div class="err"></div></div><div><input name="e" type="email" placeholder="Corporate email" autocomplete="email" required><div class="err"></div></div></div>
+   <div class="two"><div><input name="c" placeholder="Company name" autocomplete="organization" required><div class="err"></div></div>
+    <div><select name="s" required><option value="">Industry sector</option><option>Electronics</option><option>Pharmaceuticals</option><option>Automotive</option><option>FMCG</option><option>Other</option></select><div class="err"></div></div></div>
+   <div><select name="v" required><option value="">Monthly shipping volume</option><option>&lt;500</option><option>500-2000</option><option>2000+</option></select><div class="err"></div></div>
+   <button class="btn" type="submit">Submit Sample Request</button>
+  </form>
+  <div class="ok card" id="ok" hidden>
+   <div class="eyebrow">Request received</div>
+   <div class="tid" id="tid"></div>
+   <p id="okt" class="sub" style="margin:auto"></p>
+   <button class="btn" id="again" style="margin-top:18px">New request</button>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="wrap">© EcoPack Industrial Casing Pvt Ltd · Smart, reusable, shock-absorbing cargo casings</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const V={
+ eco:{n:"Series 5 Eco-Crate",t:"Standard Industrial",best:"High-value electronics, automotive parts, machinery components.",specs:["rHDPE + Flax Fiber composite shell","Corner shock bumpers","IoT G-force sensor","500 kg payload"],w:2.2,d:1.6,shell:0x10b981,foam:0xc9a46a,mat:"rHDPE + Flax Fiber composite",sens:"The IoT G-force sensor logs every shock event along the route.",tel:()=>["G-FORCE "+(.2+Math.random()*.5).toFixed(1)+" g","SHOCK: NOMINAL","GPS LOCK"]},
+ thermo:{n:"Thermo-Shield Casing",t:"Cold-Chain & Bio",best:"Pharmaceuticals, vaccines, biological samples, high-end perishables.",specs:["Vacuum Insulation Panels (VIP)","Active Peltier cooling","Holds 2°C–8°C for 120 hrs","±0.1°C telemetry"],w:2,d:1.5,shell:0x06b6d4,foam:0xe6f6fa,mat:"Vacuum Insulation Panels inside a recyclable composite shell",sens:"±0.1°C telemetry with active Peltier control keeps the load at 2°C–8°C.",tel:()=>["TEMP "+(4.2+(Math.random()-.5)*.2).toFixed(1)+" °C","RANGE 2-8 °C","PELTIER: ACTIVE"]},
+ flexi:{n:"Flexi-Fold Bulk Box",t:"High-Volume Returnable",best:"Cross-border supply chains, retail distribution centers, FMCG bulk shipping.",specs:["Honeycomb polypropylene","75% volume reduction when collapsed","500+ reusable cycles"],w:2.4,d:1.7,shell:0x38bdf8,foam:0xf59e0b,mat:"Honeycomb polypropylene",sens:"Cycle counter and GPS track every reuse across the supply chain.",tel:()=>["CYCLES 312/500","FOLD: ASSEMBLED","GPS LOCK"]}
+};
+const CAP=["Shock Absorbers: corner bumpers dissipate drop and vibration energy in transit.",null,null];
+let cur="eco",model,L=[],H=[],ex=0,exT=0,focus=false,ft=new THREE.Vector3(),fp=new THREE.Vector3();
+const stage=$("#stage"),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(42,1,.1,100);
+let renderer;
+try{renderer=new THREE.WebGLRenderer({canvas:$("#cv"),antialias:true,alpha:true});}catch(e){stage.innerHTML='<p style="padding:24px;color:#94A3B8">3D view needs WebGL, which is unavailable in this browser.</p>';}
+if(renderer){
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+camera.position.set(4.6,3,5.4);
+const ctl=new THREE.OrbitControls(camera,renderer.domElement);
+ctl.enableDamping=true;ctl.target.set(0,.5,0);ctl.autoRotate=true;ctl.autoRotateSpeed=1.2;ctl.minDistance=2;ctl.maxDistance=14;
+ctl.addEventListener("start",()=>{focus=false;ctl.autoRotate=false});
+scene.add(new THREE.AmbientLight(0xffffff,.55));
+const dl=new THREE.DirectionalLight(0xffffff,.9);dl.position.set(4,6,5);scene.add(dl);
+const pl=new THREE.PointLight(0x06b6d4,.8,20);pl.position.set(-4,2,-3);scene.add(pl);
+const grid=new THREE.GridHelper(12,24,0x10b981,0x334155);grid.position.y=-.32;grid.material.transparent=true;grid.material.opacity=.35;scene.add(grid);
+const cv=document.createElement("canvas");cv.width=256;cv.height=136;const cx=cv.getContext("2d"),tex=new THREE.CanvasTexture(cv);
+function tel(){const l=V[cur].tel();cx.fillStyle="#04130f";cx.fillRect(0,0,256,136);cx.strokeStyle="#10b981";cx.lineWidth=4;cx.strokeRect(2,2,252,132);cx.font="bold 25px monospace";l.forEach((s,i)=>{cx.fillStyle=i?"#67e8f9":"#10b981";cx.fillText(s,14,44+i*36)});tex.needsUpdate=true}
+setInterval(tel,1500);
+const OFF=[0,.9,1.8,3.1];
+function mk(k){
+ cur=k;const c=V[k],W=c.w,D=c.d;
+ if(model)scene.remove(model);
+ model=new THREE.Group();model.position.y=-.1;scene.add(model);
+ L=[0,1,2,3].map(()=>{const g=new THREE.Group();model.add(g);return g});H=[];
+ const M=(col,o)=>new THREE.MeshStandardMaterial(Object.assign({color:col,roughness:.6,metalness:.2},o||{}));
+ const B=(w,h,d,m,x,y,z,g)=>{const s=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);s.position.set(x,y,z);g.add(s);return s};
+ B(W,.22,D,M(0x475569),0,0,0,L[0]);
+ [-1,1].forEach(x=>[-1,1].forEach(z=>B(.3,.12,.3,M(0x0f172a),x*(W/2-.25),-.16,z*(D/2-.25),L[0])));
+ B(W-.2,.05,.2,M(c.shell,{emissive:c.shell,emissiveIntensity:.3}),0,.135,0,L[0]);
+ B(W-.3,.06,D-.3,M(0x065f46),0,.2,0,L[1]);
+ B(.35,.08,.35,M(0x06b6d4,{emissive:0x06b6d4,emissiveIntensity:.7}),-.5,.27,0,L[1]);
+ B(1,.56,.06,M(0x0b1220),0,.5,D/2+.1,L[1]);
+ const dp=new THREE.Mesh(new THREE.PlaneGeometry(.92,.48),new THREE.MeshBasicMaterial({map:tex}));dp.position.set(0,.5,D/2+.134);L[1].add(dp);
+ if(k=="flexi"){
+  const hm=M(c.foam,{roughness:.7});
+  for(let i=-4;i<=4;i++)for(let j=-3;j<=3;j++){const x=i*.3+(j%2?.15:0),z=j*.26;if(Math.abs(x)>W/2-.35||Math.abs(z)>D/2-.3)continue;
+   const h=new THREE.Mesh(new THREE.CylinderGeometry(.16,.16,.7,6),hm);h.position.set(x,.58,z);L[2].add(h)}
+ }else{
+  B(W-.42,.7,D-.42,M(c.foam,{roughness:.95}),0,.58,0,L[2]);
+  if(k=="thermo"){const vm=M(0x67e8f9,{emissive:0x0e7490,emissiveIntensity:.5});
+   [-1,1].forEach(s=>{B(W-.34,.64,.05,vm,0,.58,s*(D/2-.19),L[2]);B(.05,.64,D-.34,vm,s*(W/2-.19),.58,0,L[2])})}
+ }
+ const sh=B(W+.1,1.25,D+.1,M(c.shell,{transparent:true,opacity:.26,depthWrite:false,side:THREE.DoubleSide}),0,.55,0,L[3]);
+ const e=new THREE.LineSegments(new THREE.EdgesGeometry(sh.geometry),new THREE.LineBasicMaterial({color:c.shell}));e.position.copy(sh.position);L[3].add(e);
+ const am=M(0xf59e0b,{roughness:.4});
+ [-1,1].forEach(x=>[-1,1].forEach(z=>[-.02,1.12].forEach(y=>B(.26,.26,.26,am,x*(W/2+.02),y,z*(D/2+.02),L[3]))));
+ if(k=="flexi")B(W+.14,.05,D+.14,am,0,.55,0,L[3]);
+ const mark=(i,x,y,z,g)=>{const m=new THREE.Mesh(new THREE.SphereGeometry(.1,16,16),new THREE.MeshBasicMaterial({color:0xf59e0b}));m.position.set(x,y,z);m.userData.i=i;g.add(m);H[i]=m};
+ mark(0,W/2+.2,1.2,D/2+.2,L[3]);mark(1,.62,.5,D/2+.22,L[1]);mark(2,-W/2-.12,.55,0,L[3]);
+ $("#info").innerHTML=`<div class="eyebrow">Selected variant</div><h3>${c.n}</h3><div class="tag">${c.t}</div><h4>Best for</h4><p>${c.best}</p><h4>Specifications</h4><ul>${c.specs.map(s=>"<li>"+s+"</li>").join("")}</ul>`;
+ tel();
+}
+function go(t,p){ft.copy(t);fp.copy(p);focus=true;ctl.autoRotate=false}
+function hot(i){
+ const c=V[cur],p=new THREE.Vector3();
+ $$(".hsb").forEach((b,j)=>b.classList.toggle("on",j==i));
+ if(i==2){p.set(0,L[3].position.y+.5,0);go(p,p.clone().add(new THREE.Vector3(-3.4,1.3,2.8)))}
+ else{H[i].getWorldPosition(p);go(p,p.clone().add(i?new THREE.Vector3(.5,.3,2.4):new THREE.Vector3(1.8,1,2)))}
+ $("#cap").textContent=i==0?CAP[0]:i==1?"IoT Telemetry Sensor: "+c.sens:"Eco-Composite Shell: "+c.mat+" · 100% ISO 14001 recyclable.";
+}
+$$(".hsb").forEach(b=>b.onclick=()=>hot(+b.dataset.i));
+$$(".vb").forEach(b=>b.onclick=()=>{$$(".vb").forEach(x=>x.classList.toggle("on",x==b));mk(b.dataset.k);$$(".hsb").forEach(x=>x.classList.remove("on"))});
+$("#ex").oninput=e=>{exT=e.target.value/100;$("#exv").textContent=e.target.value+"%";const y=.5+exT*1.3;go(new THREE.Vector3(0,y,0),new THREE.Vector3(camera.position.x,camera.position.y+(y-ctl.target.y),camera.position.z))};
+let dn;const rc=new THREE.Raycaster(),pt=new THREE.Vector2(),cvs=renderer.domElement;
+cvs.addEventListener("pointerdown",e=>dn=[e.clientX,e.clientY]);
+cvs.addEventListener("pointerup",e=>{if(!dn||Math.hypot(e.clientX-dn[0],e.clientY-dn[1])>6)return;const r=cvs.getBoundingClientRect();pt.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);rc.setFromCamera(pt,camera);const h=rc.intersectObjects(H);if(h.length)hot(h[0].object.userData.i)});
+function rs(){const r=stage.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()}
+new ResizeObserver(rs).observe(stage);rs();mk("eco");
+(function loop(t){requestAnimationFrame(loop);ex+=(exT-ex)*.1;OFF.forEach((o,i)=>L[i].position.y=o*ex);
+ if(focus){ctl.target.lerp(ft,.08);camera.position.lerp(fp,.08);if(camera.position.distanceTo(fp)<.02)focus=false}
+ H.forEach((m,i)=>m.scale.setScalar(1+.3*Math.sin(t/300+i)));ctl.update();renderer.render(scene,camera)})(0);
+}
+
+/* ROI */
+const fmt=n=>"$"+Math.round(n).toLocaleString("en-US");let shown=0,raf;
+function calc(){const v=+$("#vol").value,a=+$("#val").value,d=v*12*a*.035,f=v*12*14.5,tg=d+f;
+ $("#vv").textContent=v.toLocaleString("en-US");$("#av").textContent=fmt(a);$("#dmg").textContent=fmt(d);$("#frt").textContent=fmt(f);
+ cancelAnimationFrame(raf);const s=shown,t0=performance.now();
+ (function st(t){const p=Math.min(1,(t-t0)/700),e=1-Math.pow(1-p,3);shown=s+(tg-s)*e;$("#tot").textContent=fmt(shown);if(p<1)raf=requestAnimationFrame(st)})(t0)}
+$("#vol").oninput=$("#val").oninput=calc;calc();
+
+/* Matrix tabs */
+$$(".tab").forEach(b=>b.onclick=()=>{$$(".tab").forEach(x=>x.classList.toggle("on",x==b));$("#mx").dataset.v=b.dataset.v});
+
+/* Lead form */
+const f=$("#f");
+f.onsubmit=e=>{e.preventDefault();let bad=false;
+ [...f.elements].filter(x=>x.name).forEach(x=>{const m=x.parentNode.querySelector(".err");let msg="";
+  if(!x.value.trim())msg="Required";
+  else if(x.name=="e"&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x.value))msg="Enter a valid email";
+  else if(x.name=="e"&&/@(gmail|yahoo|hotmail|outlook|icloud|live)\./i.test(x.value))msg="Please use your corporate email";
+  m.textContent=msg;if(msg)bad=true});
+ if(bad)return;
+ const id="#ECO-"+(1000+Math.floor(Math.random()*9000))+"-"+"ABCDEFGHJKLMNPQRSTUVWXYZ"[Math.floor(Math.random()*24)];
+ $("#tid").textContent=id;$("#okt").textContent="Thank you, "+f.n.value.trim().split(" ")[0]+". Your trial kit request for "+f.c.value.trim()+" is logged. Our team will contact "+f.e.value.trim()+" within 2 business days.";
+ f.hidden=true;$("#ok").hidden=false};
+$("#again").onclick=()=>{f.reset();f.hidden=false;$("#ok").hidden=true};
+</script>
+</body>
+</html>
